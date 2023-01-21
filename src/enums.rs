@@ -1,4 +1,24 @@
 
+#[allow(dead_code)]
+enum coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quater,
+}
+
+fn value_in_center(c: coin) -> u32 {
+    match c {
+        coin::Penny => {
+            println!("Penny");
+            1
+        },
+        coin::Nickel => 5,
+        coin::Dime => 10,
+        coin::Quater => 25,
+    }
+}
+
 #[derive(Debug)]
 enum Shape {
     Circle(f64),

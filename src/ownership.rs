@@ -5,7 +5,7 @@ fn process_fuel(propellant: String) -> (String,usize) {
     (propellant,length)
 }
 
-fn ownership() {
+pub fn ownership() {
     // shadowing variables
     let planet = "Earth";
     {
