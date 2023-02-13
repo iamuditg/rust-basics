@@ -24,3 +24,4 @@ fn lifetimes() {
     }
     println!("result is {}",result);
 }
+

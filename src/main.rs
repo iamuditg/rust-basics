@@ -8,6 +8,7 @@ use std::collections::HashMap;
 use crate::arraytuples::{array, tuples};
 use crate::flowControl::flow_control;
 use crate::function::{add, add_return_type};
+use crate::generics::NewsArticle;
 use crate::guess_game::guess;
 use crate::ownership::ownership;
 use crate::structs::Student;
@@ -21,6 +22,9 @@ mod ownership;
 mod structs;
 mod enums;
 mod collections;
+mod generics;
+mod lifetimes;
+mod closure_iter;
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
@@ -30,19 +34,7 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
 }
 
 fn main() {
-    let five = Some(5);
-    let six = plus_one(five);
-    let none = plus_one(None);
-    println!("{:?} {:?}",six,none);
-
-    //let s1 = Student::build(String::from("Rob"),90,95,99);
-    //s1.highest();
-    //ownership();
-    //array();
-    // let sum = add_return_type(2,3);
-    // println!("{}",sum);
-    //flow_control();
-    //assignment_one();
+    println!("{:?}",closure_iter::example());
 }
 
 fn assignment_one() {

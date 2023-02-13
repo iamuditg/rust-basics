@@ -34,3 +34,19 @@ fn generic_types() {
     assert_eq!(*sum_boxes(one,two),3);
     print!("Test Passed");
 }
+
+trait Summary {
+    //fn summarize(&self) -> String
+}
+pub struct NewsArticle {
+    headline: String,
+    location: String,
+    author: String,
+    content: String,
+}
+
+// impl Summary for NewsArticle {
+//     fn summarize(&self) -> String {
+//         format!("{}, by {} ({})",self.headline,self.author,self.location)
+//     }
+// }
