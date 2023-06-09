@@ -29,15 +29,35 @@ pub fn data_types() {
     let average = (a as f64 + b + c as f64)/3.0;
     assert_eq!(average,45.1);
 
+    // String
+    let some_string: &str = "Fixed length string";
+    println!("{}",some_string);
+
+    let mut growable_string: String = String::from("This string will grow");
+    println!("{}",growable_string);
+    growable_string.push('s');
+    println!("{}",growable_string);
+    growable_string.pop();
+    println!("{}",growable_string);
+
     // arrays
     let mut letters = ['a','b','c'];
     letters[0] = 'x';
     println!("first letters is {}",letters[0]);
 
+    let mut words = ['d','e','f'];
+    words[0] = 'c';
+    println!("first words is {}",words[0]);
+
     let numbers: [i32;5];
     numbers = [0,0,0,0,0];
     let index: usize = numbers.len();
     println!("last number is {} and len is {}",numbers[4],index);
+
+    let words: [&str;5];
+    words = ["words","heelo","udit","gurani","good"];
+    let size: usize = words.len();
+    println!("all words is {:?} and len is {}",words,size);
 
     let parking_lot = [[1,2,3], [4,5,6]];
     let number = parking_lot[0][1];

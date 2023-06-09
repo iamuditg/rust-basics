@@ -6,12 +6,13 @@ use std::io::prelude::*;
 use std::fmt;
 use std::collections::HashMap;
 use crate::arraytuples::{array, tuples};
+use crate::data_type::data_types;
 use crate::flowControl::flow_control;
 use crate::function::{add, add_return_type};
 use crate::generics::NewsArticle;
 use crate::guess_game::guess;
 use crate::ownership::ownership;
-use crate::structs::Student;
+use crate::structs::{struct_example, Student};
 
 mod data_type;
 mod guess_game;
@@ -34,7 +35,7 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
 }
 
 fn main() {
-    println!("{:?}",closure_iter::example());
+  struct_example();
 }
 
 fn assignment_one() {

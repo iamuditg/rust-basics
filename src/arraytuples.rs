@@ -8,4 +8,6 @@ pub fn array() {
     let mut a:[i32;5]=[0;5];
     a[3] = 1;
     println!("{:?}",a);
+    let b = [3;5];
+    println!("b: {:?}",b)
 }

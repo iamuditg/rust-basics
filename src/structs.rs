@@ -75,3 +75,32 @@ fn structs() {
     let red = Color(22,0,0);
     print!("first value is {}",red.0);
 }
+
+struct Person {
+    citizenship: String,
+    name: String,
+    age: i32,
+    gender: char,
+    salary: i32
+}
+
+impl Person {
+    fn compute_taxes(&self) -> f32 {
+        (self.salary as f32 /3.) * 0.5
+    }
+}
+
+pub fn struct_example() {
+    println!("struct example");
+    
+    let person1: Person = Person{
+        citizenship: String::from("Nouman Azam"),
+        name: String::from("Pakistan"),
+        age: 40,
+        gender: 'M',
+        salary: 40_000,
+    };
+
+    println!("{} {} {}",person1.citizenship,person1.salary,person1.gender);
+    println!("{}",person1.compute_taxes());
+}
