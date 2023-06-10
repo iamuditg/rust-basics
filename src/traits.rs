@@ -1,45 +1,62 @@
 
-#[derive(PartialEq)]
-struct Satellite {
+struct Person {
+    citizenship: String,
     name: String,
-    velocity: f64
-}
-struct SpaceStation {
-    name: String,
-    crew_size: u8,
-    altitude: u32
+    age: u8,
+    gender: char,
+    salary: i32,
 }
 
-trait Description {
-    fn describe(&self) -> String;
+struct Student {
+    name_std: String,
+    age: u8,
+    sex: char,
+    country: String,
 }
 
-impl Description for Satellite {
-    fn describe(&self) -> String {
-        format!("the {} flying at {} miles per second!",self.name,self.velocity)
+trait GeneralInfor {
+    fn info(&self) -> (&str,u8,char);
+
+    fn country_info(&self) -> &str;
+}
+
+impl GeneralInfor for Person {
+    fn info(&self) -> (&str, u8, char) {
+        (&self.name,self.age,self.gender)
+    }
+
+    fn country_info(&self) -> &str {
+        &self.citizenship
     }
 }
 
-impl Description for SpaceStation {
-    fn describe(&self) -> String {
-        format!("the {} flying at {} miles high with {}",self.name,self.altitude,self.crew_size)
+impl GeneralInfor for Student {
+    fn info(&self) -> (&str, u8, char) {
+        (&self.name_std,self.age,self.sex)
+    }
+
+    fn country_info(&self) -> &str {
+        &self.country
     }
 }
 
-fn get_displayable() -> impl fmt::Display {
-    13
-}
-
-fn traits() {
-    let hubble = Satellite{ name: String::from("Hubble Telescope"), velocity: 4.72 };
-    let hubble2 = Satellite{ name: String::from("Hubble Telescope"), velocity: 4.75 };
-    println!("equal is {}",hubble == hubble2);
-    let iss = SpaceStation{
-        name: String::from("international space station"),
-        crew_size: 6,
-        altitude: 254
+pub fn trait_main() {
+    let person1: Person = Person {
+        citizenship: String::from("Noe"),
+        name: String::from("Pakistan"),
+        age: 40,
+        gender: 'M',
+        salary: 40_000,
     };
-    println!("hubble is {}",hubble.describe());
-    println!("iss is {}",iss.describe());
-    println!("output is {}",get_displayable());
+
+    let student1 = Student{
+        name_std: String::from("aam"),
+        age: 15,
+        sex: 'M',
+        country: String::from("USA"),
+    };
+
+    println!("the basic person {:?}",person1.info());
+    println!("the basic student {:?}",person1.info());
+
 }

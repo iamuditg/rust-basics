@@ -85,6 +85,15 @@ struct Person {
 }
 
 impl Person {
+    fn new() -> Self {
+        Person{
+            citizenship: String::from("Nouman Azam"),
+            name: String::from("Pakistan"),
+            age: 40,
+            gender: 'M',
+            salary: 40_000,
+        }
+    }
     fn compute_taxes(&self) -> f32 {
         (self.salary as f32 /3.) * 0.5
     }
@@ -103,4 +112,7 @@ pub fn struct_example() {
 
     println!("{} {} {}",person1.citizenship,person1.salary,person1.gender);
     println!("{}",person1.compute_taxes());
+
+    let person2 = Person::new();
+    println!("{:?}",person2.salary)
 }
