@@ -10,7 +10,6 @@ use crate::data_type::data_types;
 use crate::enums::{enum_ex, enums};
 use crate::flowControl::flow_control;
 use crate::function::{add, add_return_type};
-use crate::generics::NewsArticle;
 use crate::guess_game::guess;
 use crate::ownership::ownership;
 use crate::structs::{struct_example, Student};
