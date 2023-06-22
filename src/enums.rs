@@ -66,6 +66,8 @@ impl Conveyance {
     }
 }
 
+
+
 pub fn enum_ex() {
     let participant_1 = Conveyance::Car;
     let participant_2 = Conveyance::Train;
@@ -77,4 +79,14 @@ pub fn enum_ex() {
     println!("the participant 2 has a train allowance of {}",participant_2.travel_allowance(120));
 
     println!("the participant 3 has a air allowance of {}",participant_3.travel_allowance(60));
+
+    // Options enums
+    let mut disease: Option<String> = None;
+    disease = Some(String::from("Diabetes"));
+
+    match disease {
+        Some(disease_name) => println!("You have the disease of {}", disease_name),
+        None => println!("You do not have disease")
+    }
+
 }

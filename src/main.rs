@@ -10,6 +10,7 @@ use crate::data_type::data_types;
 use crate::enums::{enum_ex, enums};
 use crate::flowControl::flow_control;
 use crate::function::{add, add_return_type};
+use crate::generics::square;
 use crate::guess_game::guess;
 use crate::ownership::ownership;
 use crate::structs::{struct_example, Student};
@@ -26,7 +27,6 @@ mod enums;
 mod collections;
 mod generics;
 mod lifetimes;
-mod closure_iter;
 mod traits;
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
@@ -37,7 +37,7 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
 }
 
 fn main() {
-    enum_ex();
+    enum_ex()
 }
 
 fn assignment_one() {
