@@ -13,6 +13,7 @@ use crate::function::{add, add_return_type};
 use crate::generics::square;
 use crate::guess_game::guess;
 use crate::ownership::ownership;
+use crate::problem_one::search_anagram;
 use crate::structs::{struct_example, Student};
 use crate::traits::trait_main;
 
@@ -29,6 +30,7 @@ mod generics;
 mod lifetimes;
 mod traits;
 mod smartpointers;
+mod problem_one;
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
@@ -38,7 +40,18 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
 }
 
 fn main() {
-    enum_ex()
+   let words = vec!["the".to_string(),"teh".to_string(),
+   "het".to_string(),"stupid".to_string(),"studpi".to_string(),
+   "apple".to_string(),"appel".to_string()];
+
+    let grouping = search_anagram(words);
+
+    let input_word = String::from("tech");
+    for i in grouping.into_iter() {
+        if i.contains(&input_word) {
+            println!("The group of the word is {:?}",i)
+        }
+    }
 }
 
 fn assignment_one() {
