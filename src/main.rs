@@ -28,6 +28,7 @@ mod collections;
 mod generics;
 mod lifetimes;
 mod traits;
+mod smartpointers;
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
