@@ -2,6 +2,7 @@ use crate::basic::basics_rust;
 use crate::control_structure::control_structure;
 use crate::enums_generics::enums_generics;
 use crate::hashmap::hash_map_ex;
+use crate::lifetimes::lifetimes_ex;
 use crate::ownership::f_ownership;
 use crate::stack_Imp::stack_implementation;
 use crate::structure::stge_example;
@@ -15,6 +16,7 @@ mod structure;
 mod traits;
 mod enums_generics;
 mod hashmap;
+mod lifetimes;
 
 fn main() {
     //basics_rust()
@@ -24,5 +26,6 @@ fn main() {
     //stge_example();
     //traits_ex();
     //enums_generics();
-    hash_map_ex();
+    //hash_map_ex();
+    lifetimes_ex();
 }
